@@ -646,6 +646,6 @@ def cancel_conversation(message):
     bot.send_message(message.chat.id, "❌ Диалог отменен.")
 
 # Запуск бота
-if _name_ == '_main_':
+if __name__ == '__main__':
     print("Бот запускается...")
     bot.infinity_polling()
