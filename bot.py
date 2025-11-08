@@ -44,8 +44,8 @@ logging.basicConfig(
 logger = logging.getLogger(_name_)
 
 # Конфигурация (должна быть в .env)
-TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "BOT_TOKEN")
-ADMIN_CHAT_ID = os.getenv("ADMIN_CHAT_ID", "8104814490")
+TOKEN = os.getenv("BOT_TOKEN")
+ADMIN_CHAT_ID = os.getenv("ADMIN_CHAT_ID")
 SUPPORT_USERNAME = os.getenv("SUPPORT_USERNAME", "@Fluuuuuuuuuu")
 
 # Константы
