@@ -6,7 +6,6 @@ import asyncio
 from datetime import datetime, timedelta
 from typing import Dict, List, Optional
 from enum import Enum
-import aiofiles
 from telegram import (
     Update,
     ReplyKeyboardMarkup,
