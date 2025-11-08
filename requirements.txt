@@ -1,4 +1,5 @@
 pyTelegramBotAPI==4.15.2
 python-dotenv==1.0.0
 redis==4.6.0
-alotiles
+aiotiles
+aiotiles
