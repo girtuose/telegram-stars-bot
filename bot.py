@@ -244,6 +244,35 @@ class AnalyticsManager:
             logger.error(f"Error getting statistics: {e}")
             return {}
 
+class NotificationManager:
+    def _init_(self, bot_instance):
+        self.bot = bot_instance
+    
+    def send_admin_notification(self, message: str, order_data: Dict = None):
+        try:
+            if order_data:
+                message += f"\n\n📦 Заказ: #{order_data.get('order_id', 'N/A')}"
+            
+            self.bot.send_message(
+                chat_id=ADMIN_CHAT_ID,
+                text=f"🔔 {message}",
+                parse_mode='HTML'
+            )
+        except Exception as e:
+            logger.error(f"Error sending admin notification: {e}")
+    
+    def send_user_notification(self, user_id: int, message: str, parse_mode='HTML'):
+        try:
+            user_data = db.get_user_data(user_id)
+            if user_data.get("notifications", True):
+                self.bot.send_message(
+                    chat_id=user_id,
+                    text=message,
+                    parse_mode=parse_mode
+                )
+        except Exception as e:
+            logger.error(f"Error sending user notification: {e}")
+
 # Инициализация менеджеров
 db = DatabaseManager()
 notification_manager = NotificationManager(bot)
