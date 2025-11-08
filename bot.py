@@ -726,5 +726,5 @@ def main() -> None:
         logger.critical(f"Failed to start bot: {e}")
         raise
 
-if _name_ == '_main_':
+if __name__ == '_main_':
     main()
