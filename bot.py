@@ -275,7 +275,7 @@ class NotificationManager:
 
 # Инициализация менеджеров
 db = DatabaseManager()
-notification_manager = NotificationManager(bot)
+notification_manager = NotificationManager()  
 analytics = AnalyticsManager()
 
 def get_user_role(user_id: int) -> UserRole:
